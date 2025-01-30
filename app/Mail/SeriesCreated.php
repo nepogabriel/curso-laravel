@@ -18,7 +18,12 @@ class SeriesCreated extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        public string $nomeSerie,
+        public int $idSerie,
+        public int $qtdTemporadas,
+        public int $episodiosPorTemporada,
+    )
     {
         //
     }
@@ -43,7 +48,7 @@ class SeriesCreated extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            markdown: 'mail.series-created',
         );
     }
 
