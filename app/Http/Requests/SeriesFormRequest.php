@@ -25,6 +25,7 @@ class SeriesFormRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'min:2'],
+            'image' => ['mimes:jpg,jpeg,png,gif,svg', 'max:4096'],
         ];
     }
 }
